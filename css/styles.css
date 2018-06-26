@@ -1,7 +1,9 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 /* CSS Document */
-
+html {
+    height: 100%;
+}
 body,td,th,p{
     font-family: "Oswald", Arial, sans-serif;
 	font-size: 14px;
@@ -61,6 +63,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 999;
 }
 
 :focus {
@@ -131,9 +134,8 @@ nav img {
 }
 /* ====================== Map ====================== */
 #map {
-  height: 400px;
+  min-height: 400px;
   width: 100%;
-  background-color: #ccc;
 }
 
 #map:focus {
@@ -234,7 +236,7 @@ nav img {
 
 /* ====================== Restaurant Details ====================== */
 .inside #breadcrumb {
-  width: 100%;
+  width: calc(100% - 80px);
 }
 
 .inside #map-container {
