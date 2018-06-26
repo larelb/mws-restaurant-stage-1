@@ -1,4 +1,6 @@
+const CACHE_NAME = 'resources';
 const urls = [
+    '/',
     '/css/styles.css',
     '/data/restaurants.json',
     '/img/1.jpg',
@@ -12,7 +14,7 @@ const urls = [
     '/img/9.jpg',
     '/img/10.jpg',
     '/img/chef-small.png',
-    '/js/sw/index.js',
+    '/sw.js',
     '/js/dbhelper.js',
     '/js/main.js',
     '/js/restaurant_info.js',
@@ -22,7 +24,7 @@ const urls = [
 
 self.addEventListener('install', function(event){
     event.waitUntil(
-        caches.open('resources').then(function (cache) {
+        caches.open(CACHE_NAME).then(function (cache) {
           return cache.addAll(urls);
         })
     );
